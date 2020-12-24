@@ -1,13 +1,13 @@
 .logo {
-    position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: 1.5rem;
     align-items: center;
 }
 
 .img {
-    max-height: 150px !important;  
+    margin: 1rem;
+    width: 80%;
+    object-fit:fill; 
 }
   
 .rechazado{
@@ -16,4 +16,9 @@
 
 .mensaje{
     text-align: center;
+}
+
+.container{
+    width: 80%;
+    padding-top: 10px ;
 }

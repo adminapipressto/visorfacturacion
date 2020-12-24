@@ -58,12 +58,12 @@ export const CBusqueda = () => {
 
     return (
         <div className="d-flex justify-content-center"> 
-            <form onSubmit={handleSubmit(manejarSubmit)}>  
-                    <div style={{width: '620px', marginTop: '1rem', marginBottom: '1rem'}}>
+            <form className="container" onSubmit={handleSubmit(manejarSubmit)}>  
+                    <div style={{marginTop: '1rem', marginBottom: '1rem'}}>
                         <div className="card mt-3">
-                        <div className="card-body" style={{paddingTop:'10px', paddingBottom: '0px'}}>
+                        <div className="card-body">
                                 <h2 className="card-title">
-                                    Busqueda de Comprobante Electrónico
+                                    Busqueda de CPE
                                 </h2> 
 
                                 <div className="form-group">
