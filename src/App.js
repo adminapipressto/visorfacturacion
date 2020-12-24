@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Routes from './Routes'
+import { Switch, BrowserRouter as Router} from 'react-router-dom'
+import CpeContextProvider from './context/cpeContext';
+import {CLogo} from './components/CLogo';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return ( 
+  <Router> 
+      <CpeContextProvider>
+        <CLogo/>
+        <div className="container">
+          <Switch>
+            <Routes />
+          </Switch>
+        </div> 
+      </CpeContextProvider>
+  </Router> 
   );
 }
 
