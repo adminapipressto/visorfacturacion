@@ -1,5 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react'; 
-import { useHistory } from  'react-router-dom';
+import React, {useState, useEffect, useContext} from 'react';  
 import { CpeContext } from '../context/cpeContext';
 import { useForm } from "react-hook-form";
 import { getCPE, getTipoCPE, getTipoDOC } from '../services/service';
@@ -8,8 +7,7 @@ import './css/main.css';
 
 export const CBusqueda = () => {
     const { setDataCpe } = useContext(CpeContext);
-    let { register, handleSubmit, errors} = useForm();
-    const history = useHistory();
+    let { register, handleSubmit, errors} = useForm(); 
 
     const [tipoCPE, setTipoCPE] = useState([]); 
     const [tipoDOC, setTipoDOC] = useState([]); 
@@ -52,19 +50,9 @@ export const CBusqueda = () => {
             }) 
         }else{
             console.log(datoscpe.content)
-            setDataCpe(datoscpe.content)
-            // return history.push('/result'); 
+            setDataCpe(datoscpe.content) 
         }
-        //Mostramos el alert
-        // Swal.fire({
-        //     icon: "success",
-        //     title: "Registro correcto",
-        //     showConfirmButton: false,
-        //     timer: 1000
-        // })
-
-        // regresamos a la pagina principal
-        // return history.push('/category');     
+    
     }
 
 
