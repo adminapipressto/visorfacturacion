@@ -5,8 +5,8 @@ import './css/main.css';
 
 export const CLogo = () => {
     return (
-        <div className="d-flex justify-content-center log">
-            <img className='img' src={logo}/>
+        <div className="logo"> 
+            <img className='img' src={logo}/> 
         </div>
     )
 }

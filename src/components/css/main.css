@@ -1,14 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 .logo {
-    display: flex;
-    flex-direction: column;
+    display: flex; 
+    justify-content: center;
     align-items: center;
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 auto;   
 }
 
 .img {
-    margin: 1rem;
-    width: 80%;
-    height: 20%;
-    object-fit:fill; 
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    max-width: 80vw;
+    max-height: 150px !important; 
 }
   
 .rechazado{
@@ -20,5 +29,5 @@
 }
 
 .container{
-    width: 80%; 
+    width: 60%; 
 }
