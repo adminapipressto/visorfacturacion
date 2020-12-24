@@ -61,7 +61,7 @@ export const CBusqueda = () => {
             <form className="container" onSubmit={handleSubmit(manejarSubmit)}>  
                     <div style={{marginTop: '1rem', marginBottom: '1rem'}}>
                         <div className="card mt-3">
-                        <div className="card-body">
+                        <div className="card-body pb-0">
                                 <h2 className="card-title">
                                     Busqueda de CPE
                                 </h2> 
@@ -245,7 +245,7 @@ export const CBusqueda = () => {
                         </div> 
                 </div>
  
-                <button type="submit" className="btn btn-info btn-block">Consultar</button>
+                <button type="submit" className="btn btn-info btn-block mb-1">Consultar</button>
 
             </form>
         </div>

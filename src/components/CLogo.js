@@ -1,5 +1,4 @@
-import React from 'react';
-import Image from 'react-bootstrap/Image';
+import React from 'react'; 
 import logo from '../assets/img/logo.jpg';
 import './css/main.css';
 
