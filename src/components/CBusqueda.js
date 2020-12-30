@@ -3,7 +3,12 @@ import { CpeContext } from '../context/cpeContext';
 import { useForm } from "react-hook-form";
 import { getCPE, getTipoCPE, getTipoDOC } from '../services/service';
 import Swal from 'sweetalert2';
-import './css/main.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import './css/main.css'; 
+import es from 'date-fns/locale/es';
+import { registerLocale } from  "react-datepicker";
+registerLocale('es', es)
 
 export const CBusqueda = () => {
     const { setDataCpe } = useContext(CpeContext);
@@ -11,6 +16,8 @@ export const CBusqueda = () => {
 
     const [tipoCPE, setTipoCPE] = useState([]); 
     const [tipoDOC, setTipoDOC] = useState([]); 
+    const [startDate, setStartDate] = useState(new Date());
+
 
     const showTipoCPE = async() => {
         let data = await getTipoCPE(); 
@@ -206,7 +213,27 @@ export const CBusqueda = () => {
 
                                 <div className="form-group">
                                     <label htmlFor="fechaCpe">Fecha del Comprobante:</label>
-                                    <input
+
+                                    <div className="input-group">
+                                        <DatePicker 
+                                            className="form-control"
+                                            id="fechaCpe"
+                                            name="fechaCpe" 
+                                            wrapperClassName="datePicker"
+                                            selected={startDate} 
+                                            onChange={date => setStartDate(date)} 
+                                            locale="es"
+                                            dateFormat= "yyyy-MM-dd"
+                                            ref={register({required:true})}
+                                        />
+  
+                                        {errors.fechaCpe && errors.fechaCpe.type === 'required' && (
+                                        <small className="text-danger font-weight-bold">Debe ingresar la Fecha del Comprobante</small>
+                                        )}
+                                    </div>
+
+
+                                    {/* <input
                                     type="text"
                                     className="form-control"
                                     id="fechaCpe"
@@ -215,7 +242,8 @@ export const CBusqueda = () => {
                                     />
                                     {errors.fechaCpe && errors.fechaCpe.type === 'required' && (
                                     <small className="text-danger font-weight-bold">Debe ingresar la Fecha del Comprobante</small>
-                                    )}
+                                    )} */}
+
                                 </div>
 
                                 <div className="form-group">
@@ -224,11 +252,11 @@ export const CBusqueda = () => {
                                         <span className="input-group-text">S/</span>
                                         <input
                                         type="number"
-                                        className="form-control"
+                                        className="form-control from-block"
                                         id="importeCpe"
                                         name="importeCpe" 
                                         step="any"
-                                        ref={register({required:true,min:1})}
+                                        ref={register({required:true,min:0})}
                                         /> 
                                     </div>
                                     <div>
