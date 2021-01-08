@@ -8,6 +8,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import './css/main.css'; 
 import es from 'date-fns/locale/es';
 import { registerLocale } from  "react-datepicker";
+import moment from 'moment'; 
+
 registerLocale('es', es)
 
 export const CBusqueda = () => {
@@ -17,7 +19,7 @@ export const CBusqueda = () => {
     const [tipoCPE, setTipoCPE] = useState([]); 
     const [tipoDOC, setTipoDOC] = useState([]); 
     const [startDate, setStartDate] = useState(new Date());
-
+ 
 
     const showTipoCPE = async() => {
         let data = await getTipoCPE(); 
@@ -44,8 +46,9 @@ export const CBusqueda = () => {
 
 
     const manejarSubmit = async (data) => {    
- 
-        let datoscpe = await getCPE(data);
+        let fecha = moment(startDate).format("YYYY-MM-DD");
+        let datos = {...data, fechaCpe: fecha}
+        let datoscpe = await getCPE(datos);
 
         if (datoscpe.status === false){
             // No Existe el CPE

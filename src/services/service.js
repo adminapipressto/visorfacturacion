@@ -22,8 +22,7 @@ export const getTipoDOC = async () => {
 }
 
 export const getCPE = async (data) => {
-    console.log(data)
-    console.log(data.rucEmisor)
+    console.log(data) 
     let content = await FetchGet(`consultarcpe/${data.rucEmisor}/${data.tipoDocReceptor}/${data.rucReceptor}/${data.tipoCpe}/${data.serieCpe}/${data.numeroCpe}/${data.fechaCpe}/${data.importeCpe}`);
     return content;
 }
