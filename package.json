@@ -1,6 +1,6 @@
 {
   "name": "visorpressto",
-  "homepage": "http://chiclayo.presstoperu.com/evisor/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
